@@ -1,6 +1,6 @@
 # nginx
 to install
-sudo apt install nginx
+sudo apt install nginx 
 
 +----------------------------------install database--------------------------------------+
 sudo apt install mysql-server-5.7
