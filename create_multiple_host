@@ -1,0 +1,38 @@
+to create multiple host in local with dns 
+sudo chmod 777 -R /var/www
+cd /var/www/
+mkdir test
+sudo chmod 777 -R test
+cd test
+sudo nano index.php
+--->set <?php phpinfo(); ?>
+or download  index.php and place  in test folder
+
+copy default page and rename with [foldername].conf
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/test.conf
+
+open test.conf you can use nano /gedit or  for more easy way go to your folder and right click choos open as root 
+i use gedit its cool and easy 
+sudo gedit /etc/nginx/sites-available/test.conf
+
+after open 
+
+just replace  [follow test.conf file]
+listen 80 ;
+listen [::]:80;
+root /var/www/html;  => root /var/www/test;
+server_name 127.0.0.1  => server_name test.com www.test.com
+
+
+Now enable the new server block by running the following command.
+sudo ln -s /etc/nginx/sites-available/test.conf /etc/nginx/sites-enabled/
+
+After checking the Nginx configuration, restart the Nginx service by running following command.
+nginx -t
+
+set host
+sudo gedit /etc/hosts
+127.0.0.1   www.test.com
+
+systemctl reload nginx 
+and test your url 
