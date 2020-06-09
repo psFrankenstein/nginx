@@ -32,6 +32,7 @@ nginx -t
 
 set host
 sudo gedit /etc/hosts
+127.0.0.1   test.com
 127.0.0.1   www.test.com
 
 systemctl reload nginx 
