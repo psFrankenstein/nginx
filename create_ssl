@@ -9,3 +9,7 @@ and accept
 
 reload your server 
 and try connection 
+to check auto generate 
+sudo certbot renew --dry-run
+
+if run succesfully then it set to auto generate mode
