@@ -33,3 +33,18 @@ systemctl reload nginx
 and try 127.0.0.1 or localhost in your browser
 
 ......................................................................
+
+to host multiple site with dns follow  create_multiple_host file
+for ssl in server with cerbot  create_ssl
+https in local with open ssl follow  test.conf (with ssl)
+
+.......................................................................
+
+to install phmyadmin
+sudo apt-get install phpmyadmin
+
+to link with tour server 
+sudo ln -s /usr/share/phpmyadmin /var/www/folder_name
+
+restert  php
+systemctl restert php7.2-fpm [in linux it may not effect  it will show Unknown operation restert ]
