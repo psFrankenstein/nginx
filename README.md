@@ -1,12 +1,12 @@
 # nginx
 to install
 sudo apt install nginx
-================install database=====================
+-----------------------install database---------------------------
 sudo apt install mysql-server-5.7
 after this follow mysql_secure file to set password
-==================install php========================
+------------------install php-------------------------------------
 sudo apt-get install php-fpm php-mysql
-=====================================================
+-----------------------------------------------------------------
 copy the default page content and pest  /etc/nginx/sites-available/default here
 replace the default content
 =====================================================
