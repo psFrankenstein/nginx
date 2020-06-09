@@ -1,0 +1,40 @@
+install (nginx first)
+
+
+lsb_release -a ; getconf LONG_BIT ; hostname -I ; hostname
+systemctl start nginx
+systemctl enable nginx
+
+
+cd /etc/hosts/private [chown if permission issue or try chmod for global acc]
+openssl genrsa -aes128 -out server.key 2048
+openssl rsa -in server.key -out server.key
+openssl req -new -days 3650 -key server.key -out server.csr
+
+
+openssl x509 -in server.csr -out server.crt -req -signkey server.key -days 3650
+
+
+chmod 400 server.*
+
+sudo gedit /etc/nginx/sites-available/test.conf &>/dev/null
+
+follow the test.conf(with ssl file)
+
+          listen 443 ssl default_server;
+	 listen [::]:443 ssl default_server;
+	 ssl_prefer_server_ciphers on;
+	 ssl_ciphers 'ECDH !aNULL !eNULL !SSLv2 !SSLv3';
+	 ssl_certificate /etc/ssl/private/server.crt;
+	 ssl_certificate_key /etc/ssl/private/server.key;
+
+
+sudo nginx -t
+
+systemctl restart nginx
+systemctl status  nginx  [active]
+
+
+ netstat -tlpn    [view the ports ]
+
+hit your url in brawser and go for advance option for https
