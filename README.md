@@ -35,7 +35,9 @@ and try 127.0.0.1 or localhost in your browser
 ......................................................................
 
 to host multiple site with dns follow  create_multiple_host file
+
 for ssl in server with cerbot  create_ssl
+
 https in local with open ssl follow  test.conf (with ssl)
 
 .......................................................................
@@ -52,3 +54,21 @@ sudo ln -s /usr/share/phpmyadmin /var/www/folder_name
 
 restert  php
 systemctl restert php7.2-fpm [in linux it may not effect  it will show Unknown operation restert ]
+
+
+add some dependences to work system currectly
+
+sudo apt install php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
+
+
+
+
+if working with cms 
+
+edit test.conf and replace
+
+try_files $uri $uri/ =404; to
+
+try_files $uri $uri/ /index.php$is_args$args;
+
+systemctl reload nginx
