@@ -2,8 +2,7 @@
 to install
 sudo apt install nginx
 
-.............................install database..........................
-
++----------------------------------install database---------------------------------------
 sudo apt install mysql-server-5.7
 
 after this follow mysql_secure file to set password
