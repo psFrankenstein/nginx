@@ -41,10 +41,14 @@ https in local with open ssl follow  test.conf (with ssl)
 .......................................................................
 
 to install phmyadmin
+
 sudo apt-get install phpmyadmin
 
 to link with tour server 
+
 sudo ln -s /usr/share/phpmyadmin /var/www/folder_name
+
+[now we have a symbolic link in our folder and we can rename it and use after /[folder_name] to access phpmyadmin]
 
 restert  php
 systemctl restert php7.2-fpm [in linux it may not effect  it will show Unknown operation restert ]
