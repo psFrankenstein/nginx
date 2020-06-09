@@ -1,0 +1,11 @@
+for creating ssl certificate  in host we will use certbot [a free organization provide ssl for host ]
+sudo add-apt-repository ppa:certbot-nginx
+apt install python-certbot-nginx
+certbot --nginx -d donainname.com -d www.donainname.com   <-|
+
+it will ask email for first time provide a valid email so in case any problem it can provide support
+after that it will ask for redirection like for any order you want to pass tour connection with ssl or not just enter y
+and accept 
+
+reload your server 
+and try connection 
