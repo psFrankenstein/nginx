@@ -28,9 +28,9 @@ sudo ln -s /usr/share/phpmyadmin /var/www/folder_name
 
 [now we have a symbolic link in our folder and we can rename it and use after /[folder_name] to access phpmyadmin]
 
-restert  php
+restart  php
 
-systemctl restert php7.2-fpm [in linux it may not effect  it will show Unknown operation restert ]
+systemctl restart php7.2-fpm [in linux it may not effect  it will show Unknown operation restart ]
 
 add some dependences to work system currectly
 sudo apt install php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
